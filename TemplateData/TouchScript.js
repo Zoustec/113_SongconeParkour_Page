@@ -1,3 +1,5 @@
+// 此腳本做兩件事：1、雙指全屏切換。2、三指發送排行表事件
+
 var touchCount = 0;
 var touchStartDistance = 0;
 var touchDistance = 0;
