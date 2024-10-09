@@ -1,8 +1,3 @@
-// 獲取當前 URL 的查詢參數
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const group = urlParams.get('group');
-
 // 根據 'group' 的值設定重定向網址
 let sheetUrl = "";
 if (group === '0') {
@@ -18,5 +13,3 @@ const sheet = {
         gameInstance.SendMessage("Console", "ApplySetting", sheetUrl);
     }
 };
-
-//sheet.Send();

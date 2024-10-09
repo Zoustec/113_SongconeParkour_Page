@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="zh-hant">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HL24CQ7FM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-7HL24CQ7FM');
-</script>
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HL24CQ7FM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-7HL24CQ7FM');
+  </script>
+  <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const group = urlParams.get('group');
+  </script>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+  <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=yes">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
   <title>SongconeParkour</title>
+
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
+  <link rel="stylesheet" href="TemplateData/frame.css">
   <link rel="manifest" href="manifest.webmanifest.json">
+  
   <script src="TemplateData/TouchScript.js"></script>
   <script src="TemplateData/frame.js"></script>
-  <link rel="stylesheet" href="TemplateData/frame.css">
-  <script src="TemplateData/Result.js"></script>
   <script src="TemplateData/sheet.js"></script>
+  <script src="TemplateData/Result.js"></script>
 </head>
+
 <body>
   <div id="unity-container">
     <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
@@ -70,50 +80,50 @@
     }
 
     var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/1.0.3.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/1.0.3.data.unityweb",
-        frameworkUrl: buildUrl + "/1.0.3.framework.js.unityweb",
-        codeUrl: buildUrl + "/1.0.3.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Zoustec ltd.",
-        productName: "SongconeParkour",
-        productVersion: "1.0.3",
-        showBanner: unityShowBanner,
-      };
+    var loaderUrl = buildUrl + "/1.0.3.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/1.0.3.data.unityweb",
+      frameworkUrl: buildUrl + "/1.0.3.framework.js.unityweb",
+      codeUrl: buildUrl + "/1.0.3.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Zoustec ltd.",
+      productName: "SongconeParkour",
+      productVersion: "1.0.3",
+      showBanner: unityShowBanner,
+    };
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-		  //Mobile device style: fill the whole browser client area with the game canvas:
-          var meta = document.createElement('meta');
-          meta.name = 'viewport';
-          meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-          document.getElementsByTagName('head')[0].appendChild(meta);
+      //Mobile device style: fill the whole browser client area with the game canvas:
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+      document.getElementsByTagName('head')[0].appendChild(meta);
     }
-	
-      canvas.style.background = "url('" + buildUrl + "/1.0.3.jpg') center / cover";
-		loadingBar.style.display = "block";
 
-      var script = document.createElement("script");
-	    var gameInstance = null;
-	  
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + 9 + "%";
-        }).then((unityInstance) => {
-		  gameInstance = unityInstance;
-          loadingBar.style.display = "none";
-		  sheet.Send();
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-	  //
-	  script.addEventListener('contextmenu', function(event) {
-		event.preventDefault();
-	  });
-	  
+    canvas.style.background = "url('" + buildUrl + "/1.0.3.jpg') center / cover";
+    loadingBar.style.display = "block";
+
+    var script = document.createElement("script");
+    var gameInstance = null;
+
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        progressBarFull.style.width = 100 * progress + 9 + "%";
+      }).then((unityInstance) => {
+        gameInstance = unityInstance;
+        loadingBar.style.display = "none";
+        sheet.Send();
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+    //
+    script.addEventListener('contextmenu', function (event) {
+      event.preventDefault();
+    });
+
   </script>
 </body>
 
