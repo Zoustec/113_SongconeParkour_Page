@@ -1,9 +1,9 @@
-const cacheName = "Zoustec ltd.-SongconeParkour-1.0.3";
+const cacheName = "Zoustec ltd.-SongconeParkour-1.0.4";
 const contentToCache = [
-    "Build/1.0.3.loader.js",
-    "Build/1.0.3.framework.js.unityweb",
-    "Build/1.0.3.data.unityweb",
-    "Build/1.0.3.wasm.unityweb",
+    "Build/1.0.4.loader.js",
+    "Build/1.0.4.framework.js.unityweb",
+    "Build/1.0.4.data.unityweb",
+    "Build/1.0.4.wasm.unityweb",
     "TemplateData/style.css"
 
 ];

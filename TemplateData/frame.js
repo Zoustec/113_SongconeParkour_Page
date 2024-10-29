@@ -1,10 +1,14 @@
 // 根據 'group' 的值設定重定向網址
 let encodedUrl = 'aHR0WFlacHM6WFlaLy96WFlab3VzWFladGVjWFlaLnBzWFlaZS5pWFlacy82WFlaZ3Z0WFlaYTVYWVo=';
-if (group === '0') {
+
+if (group === '0' || group === 'db01') {
     //兒童組表單
     encodedUrl = 'aHR0WFlacHM6WFlaLy96WFlab3VzWFladGVjWFlaLnBzWFlaZS5pWFlacy82WFlaZ3Z0WFlaYTVYWVo=';
-} else {
+} else if (group === '1' || group === 'db02'){
     //成人組表單
+    encodedUrl = 'aHR0WFlacHM6WFlaLy96WFlab3VzWFladGVjWFlaLnBzWFlaZS5pWFlacy82WFlaZ3Z0WFlaYTVYWVo=';
+} else if (group === 'db03'){
+    //特別組表單
     encodedUrl = 'aHR0WFlacHM6WFlaLy96WFlab3VzWFladGVjWFlaLnBzWFlaZS5pWFlacy82WFlaZ3Z0WFlaYTVYWVo=';
 }
 
